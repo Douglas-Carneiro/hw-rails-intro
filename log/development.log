@@ -152,3 +152,438 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.erb within layouts/application (9.9ms)
   Rendered layouts/_flash.erb (2.2ms)
 Completed 200 OK in 171ms (Views: 169.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:50:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (51.8ms)
+  Rendered layouts/_flash.erb (2.0ms)
+Completed 200 OK in 809ms (Views: 791.4ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:51:11 -0300
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (160.2ms)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <%#  Part 2: Start here... %>
+    5: <%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
+    6:   Include:
+    7:   <% @all_ratings.each do |rating| %>
+    8:     <div class="form-check  form-check-inline">
+    9:       <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
+   10:       <%= check_box_tag "ratings[#{rating}]", "1",  @ratings_to_show.include?(rating), class: 'form-check-input' %>
+  app/views/movies/index.html.erb:7:in `block in _app_views_movies_index_html_erb___4267070786191280837_57840'
+  app/views/movies/index.html.erb:5:in `_app_views_movies_index_html_erb___4267070786191280837_57840'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (28.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (153.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (8.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (260.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:54:06 -0300
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+     7:   <% @all_ratings.each do |rating| %>
+     8:     <div class="form-check  form-check-inline">
+     9:       <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
+    10:       <%= check_box_tag "ratings[#{rating}]", "1",  @ratings_to_show.include?(rating), class: 'form-check-input' %>
+    11:     </div>
+    12:   <% end %>
+    13:   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
+  app/views/movies/index.html.erb:10:in `block (2 levels) in _app_views_movies_index_html_erb___4267070786191280837_57840'
+  app/views/movies/index.html.erb:7:in `each'
+  app/views/movies/index.html.erb:7:in `block in _app_views_movies_index_html_erb___4267070786191280837_57840'
+  app/views/movies/index.html.erb:5:in `_app_views_movies_index_html_erb___4267070786191280837_57840'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (9.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:54:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendered movies/index.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+     7:   <% @all_ratings.each do |rating| %>
+     8:     <div class="form-check  form-check-inline">
+     9:       <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
+    10:       <%= check_box_tag "ratings[#{rating}]", "1",  @ratings_to_show.include?(rating), class: 'form-check-input' %>
+    11:     </div>
+    12:   <% end %>
+    13:   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
+  app/views/movies/index.html.erb:10:in `block (2 levels) in _app_views_movies_index_html_erb___790249857712731810_56920'
+  app/views/movies/index.html.erb:7:in `each'
+  app/views/movies/index.html.erb:7:in `block in _app_views_movies_index_html_erb___790249857712731810_56920'
+  app/views/movies/index.html.erb:5:in `_app_views_movies_index_html_erb___790249857712731810_56920'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (79.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (146.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (108.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (215.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:58:04 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 623ms (Views: 610.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:59:18 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (38.1ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 99ms (Views: 84.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 09:59:26 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 121.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:24:31 -0300
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `with_ratings' for #<Class:0x00007f3aa58d68c8>
+Did you mean?  with_warnings):
+  app/controllers/movies_controller.rb:11:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:25:31 -0300
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `map' for nil:NilClass):
+  app/models/movie.rb:5:in `with_ratings'
+  app/controllers/movies_controller.rb:11:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:26:50 -0300
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/models/movie.rb:5:in `with_ratings'
+  app/controllers/movies_controller.rb:11:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (83.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:30:13 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (49.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 102ms (Views: 88.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:30:18 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `downcase' for ["G", "1"]:Array):
+  app/models/movie.rb:8:in `map'
+  app/models/movie.rb:8:in `with_ratings'
+  app/controllers/movies_controller.rb:11:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (57.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (31.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (162.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (131.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (246.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:30:46 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (4.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'
+  Rendered movies/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 37.7ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:30:53 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (3.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'[0m
+  Rendered movies/index.html.erb within layouts/application (55.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 149ms (Views: 113.5ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:30:56 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'
+  Rendered movies/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 108ms (Views: 105.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:31:01 -0300
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:11:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:32:05 -0300
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:12:in `index'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (41.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-11 10:32:20 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (47.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 100ms (Views: 84.9ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:32:24 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (2.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'
+  Rendered movies/index.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 142ms (Views: 125.6ms | ActiveRecord: 8.5ms)
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'[0m
+  [1m[35mMovie Load (2.3ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'g'[0m
+  [1m[35mMovie Load (1.9ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:34:48 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'[0m
+  Rendered movies/index.html.erb within layouts/application (26.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 61.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:34:56 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'
+  Rendered movies/index.html.erb within layouts/application (43.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 114ms (Views: 112.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:35:01 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG"=>"1", "PG-13"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (3.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'PG-13')[0m
+  Rendered movies/index.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 104ms (Views: 100.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:37:43 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG"=>"1", "PG-13"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'PG-13')
+  Rendered movies/index.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 94ms (Views: 76.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:37:48 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (4.8ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (45.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 116ms (Views: 109.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:37:54 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (3.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'
+  Rendered movies/index.html.erb within layouts/application (32.3ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 125ms (Views: 119.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 127.0.0.1 at 2022-02-11 10:37:58 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[36mMovie Load (3.4ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 84ms (Views: 80.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-11 10:38:10 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.8ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 99ms (Views: 95.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2022-02-11 10:38:10 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-11 10:38:11 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-11 10:38:11 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-11 10:38:11 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-12 06:59:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.4ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (80.5ms)
+  Rendered layouts/_flash.erb (7.9ms)
+Completed 200 OK in 1308ms (Views: 1287.5ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2022-02-12 06:59:16 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (1.7ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'[0m
+  Rendered movies/index.html.erb within layouts/application (178.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 411ms (Views: 335.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&commit=Refresh" for 127.0.0.1 at 2022-02-12 06:59:22 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 76.8ms | ActiveRecord: 0.7ms)
