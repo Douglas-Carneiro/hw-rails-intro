@@ -8,9 +8,11 @@ class MoviesController < ApplicationController
   
     def index
       @all_ratings = Movie.all_ratings
-      ratings = params[:ratings] ? params[:ratings].keys : []
-      @movies = Movie.with_ratings(ratings)
-      @ratings_to_show = ratings
+      @ratings_to_show = params[:ratings] ? params[:ratings].keys : []
+      order = params[:orderby]
+      @movies = Movie.with_ratings(@ratings_to_show).order(order)
+      @title_style = order == 'title' ? 'bg-warning' : ''
+      @release_date_style = order == 'release_date' ? 'bg-warning' : ''
     end
   
     def new
