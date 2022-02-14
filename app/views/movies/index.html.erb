@@ -2,7 +2,7 @@
 <h2>All Movies</h2>
 
 <%#  Part 2: Start here... %>
-<%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
+<%= form_tag movies_path(:home => 1), method: :get, id: 'ratings_form' do %>
   Include:
   <% @all_ratings.each do |rating| %>
     <div class="form-check  form-check-inline">
@@ -10,15 +10,16 @@
       <%= check_box_tag "ratings[#{rating}]", "1",  @ratings_to_show.include?(rating), class: 'form-check-input' %>
     </div>
   <% end %>
+  <%= hidden_field_tag 'home', '1'  %>
   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
 <% end %>
 
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th class=<%=@title_style%> ><%= link_to "Movie Title", movies_path(:orderby => "title", :ratings => @ratings_to_show.map { |r| [r, 1]}.to_h)%></th>
+      <th class=<%=@title_style%> ><%= link_to "Movie Title", movies_path(:orderby => "title", :ratings => @ratings_to_show.map { |r| [r, 1]}.to_h, :home => 1)%></th>
       <th>Rating</th>
-      <th class=<%=@release_date_style%> ><%= link_to "Release Date", movies_path(:orderby => "release_date", :ratings => @ratings_to_show.map { |r| [r, 1]}.to_h)%></th>
+      <th class=<%=@release_date_style%> ><%= link_to "Release Date", movies_path(:orderby => "release_date", :ratings => @ratings_to_show.map { |r| [r, 1]}.to_h, :home => 1)%></th>
       <th>More Info</th>
     </tr>
   </thead>
