@@ -2445,3 +2445,954 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.erb within layouts/application (43.7ms)
   Rendered layouts/_flash.erb (5.0ms)
 Completed 200 OK in 225ms (Views: 216.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-16 19:19:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (5.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.5ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (132.0ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 1169ms (Views: 1091.7ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:04:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (3.5ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (87.8ms)
+  Rendered layouts/_flash.erb (5.9ms)
+Completed 200 OK in 1492ms (Views: 1327.6ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:05:38 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 195ms (Views: 192.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-17 06:05:53 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[35mMovie Load (2.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (130.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 271ms (Views: 264.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-17 06:06:15 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMovie Load (3.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (86.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 319ms (Views: 313.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&home=1&commit=Refresh" for 127.0.0.1 at 2022-02-17 06:06:19 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "home"=>"1", "commit"=>"Refresh"}
+  [1m[35mMovie Load (15.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'
+  Rendered movies/index.html.erb within layouts/application (90.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 399ms (Views: 302.9ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/movies?home=1&orderby=title&ratings%5BG%5D=1" for 127.0.0.1 at 2022-02-17 06:06:25 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title", "ratings"=>{"G"=>"1"}}
+  [1m[36mMovie Load (6.7ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (41.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 127ms (Views: 113.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/movies?home=1&orderby=title&ratings%5BG%5D=1" for 127.0.0.1 at 2022-02-17 06:07:34 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title", "ratings"=>{"G"=>"1"}}
+  [1m[35mMovie Load (3.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 95ms (Views: 88.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/movies?home=1&orderby=title&ratings%5BG%5D=1" for 127.0.0.1 at 2022-02-17 06:08:00 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title", "ratings"=>{"G"=>"1"}}
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 129ms (Views: 123.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies?home=1&orderby=title&ratings%5BG%5D=1" for 127.0.0.1 at 2022-02-17 06:09:44 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title", "ratings"=>{"G"=>"1"}}
+  [1m[35mMovie Load (3.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (117.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 307ms (Views: 265.5ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:09:47 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (54.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (157.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (6.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (9.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (146.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:31:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (3.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (77.3ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 979ms (Views: 845.7ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:31:18 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (47.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (30.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (370.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (6.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (6.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (6.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (11.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (187.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (5.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (7.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (315.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:36:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (124.5ms)
+  Rendered layouts/_flash.erb (2.0ms)
+Completed 200 OK in 924ms (Views: 835.1ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:36:30 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (74.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (19.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (75.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (379.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (188.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:40:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (3.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (145.2ms)
+  Rendered layouts/_flash.erb (1.5ms)
+Completed 200 OK in 1019ms (Views: 925.7ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:40:58 -0300
+
+
+Started GET "/auth/github/callback?code=ecf488391f1ae9f5e8cf&state=baa882f26153ebc61866c7719c1fef9fc906f41a9a04912c" for 127.0.0.1 at 2022-02-17 06:41:19 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"ecf488391f1ae9f5e8cf", "state"=>"baa882f26153ebc61866c7719c1fef9fc906f41a9a04912c", "provider"=>"github"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+StandardError (StandardError):
+  app/controllers/session_controller.rb:3:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (20.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (25.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.0ms)
+
+
+Started GET "/auth/github/callback?error=access_denied&error_description=The+user+has+denied+your+application+access.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23access-denied&state=baa882f26153ebc61866c7719c1fef9fc906f41a9a04912c" for 127.0.0.1 at 2022-02-17 06:41:59 -0300
+
+OmniAuth::Strategies::OAuth2::CallbackError (access_denied | The user has denied your application access. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#access-denied):
+  omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+  omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+  omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+  omniauth-oauth2 (1.7.2) lib/omniauth/strategies/oauth2.rb:89:in `callback_phase'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+  omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+  rack (1.6.13) lib/rack/etag.rb:24:in `call'
+  rack (1.6.13) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.13) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:252:in `context'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:247:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.11) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.11) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:42:56 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (6.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (57.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 197ms (Views: 180.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/application.self-07d0dbb4f14da36c01f97149261cf0b7471c7e97f10ebfbe3bea09c0c0e00cdd.css?body=1" for 127.0.0.1 at 2022-02-17 06:42:56 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-17 06:42:56 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-17 06:42:56 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-17 06:42:56 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:42:59 -0300
+
+
+Started GET "/auth/github/callback?code=d6e93a6c27c0d97ef36c&state=ebd249b150e98bff295a0c65f847eaa3efb86a79c8f0e98a" for 127.0.0.1 at 2022-02-17 06:43:39 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"d6e93a6c27c0d97ef36c", "state"=>"ebd249b150e98bff295a0c65f847eaa3efb86a79c8f0e98a", "provider"=>"github"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+StandardError (StandardError):
+  app/controllers/session_controller.rb:3:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:46:10 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms)
+
+SyntaxError (/home/douglas/Documentos/engineering-saas/hw-rails-intro/app/views/layouts/application.html.erb:41: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  app/views/layouts/application.html.erb:41: syntax error, unexpected `ensure', expecting end-of-input
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (33.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (56.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:46:43 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 120ms (Views: 116.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:47:01 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.9ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 148ms (Views: 143.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:47:03 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (130.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (264.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (4.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.3ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:48:53 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (100.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:48:57 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:48:59 -0300
+
+
+Started GET "/auth/github/callback?code=8e8c0f00648ee3b695f5&state=39692b34fdc0413084803e2305d866b2631bc680527638e3" for 127.0.0.1 at 2022-02-17 06:49:00 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"8e8c0f00648ee3b695f5", "state"=>"39692b34fdc0413084803e2305d866b2631bc680527638e3", "provider"=>"github"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+StandardError (StandardError):
+  app/controllers/session_controller.rb:3:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (133.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (12.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (212.4ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:49:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (135.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (175.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:50:10 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 143ms (Views: 139.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:50:12 -0300
+
+
+Started GET "/auth/github/callback?code=417bb07ef9a92e8a93ad&state=f8edd1a37e9c9c2389fbf537725e4f2077c0e9e948159c8e" for 127.0.0.1 at 2022-02-17 06:50:12 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"417bb07ef9a92e8a93ad", "state"=>"f8edd1a37e9c9c2389fbf537725e4f2077c0e9e948159c8e", "provider"=>"github"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+StandardError (StandardError):
+  app/controllers/session_controller.rb:3:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (5.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (6.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (150.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:50:33 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (13.0ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (63.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 166ms (Views: 151.5ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/application.self-07d0dbb4f14da36c01f97149261cf0b7471c7e97f10ebfbe3bea09c0c0e00cdd.css?body=1" for 127.0.0.1 at 2022-02-17 06:50:33 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-17 06:50:33 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-17 06:50:33 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-17 06:50:33 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:50:35 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:50:45 -0300
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2022-02-17 06:50:51 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (33.1ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.7ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (143.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (8.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (10.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.2ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:51:56 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:53:02 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 98ms (Views: 89.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:53:13 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 107ms (Views: 105.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-07d0dbb4f14da36c01f97149261cf0b7471c7e97f10ebfbe3bea09c0c0e00cdd.css?body=1" for 127.0.0.1 at 2022-02-17 06:53:13 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-17 06:53:13 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-17 06:53:13 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-17 06:53:13 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:53:15 -0300
+
+
+Started GET "/session/destroy" for 127.0.0.1 at 2022-02-17 06:53:25 -0300
+Processing by SessionController#destroy as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template session/destroy, application/destroy with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/douglas/Documentos/engineering-saas/hw-rails-intro/app/views"
+):
+  actionview (4.2.11) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.11) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.11) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.11) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.11) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.11) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.11) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.11) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.11) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.11) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.11) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.11) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.11) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.11) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.11) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.11) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.11) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.11) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.11) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.11) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.11) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.11) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.11) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.11) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.11) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.11) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.11) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.11) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.11) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.11) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.11) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.11) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.11) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.11) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.11) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.11) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.11) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.11) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.11) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.11) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:202:in `call!'
+  omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+  omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+  rack (1.6.13) lib/rack/etag.rb:24:in `call'
+  rack (1.6.13) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.13) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:252:in `context'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:247:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.11) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.11) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+  /home/douglas/.asdf/installs/ruby/2.7.4/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.6ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (108.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 06:56:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (93.8ms)
+  Rendered layouts/_flash.erb (1.5ms)
+Completed 200 OK in 821ms (Views: 752.7ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 06:56:08 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 07:08:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.9ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (71.6ms)
+  Rendered layouts/_flash.erb (1.9ms)
+Completed 200 OK in 785ms (Views: 731.8ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 07:08:48 -0300
+
+
+Started GET "/auth/github/callback?code=162cbecee80fb637ab35&state=eb5c39c71bfe5624790b179e71b14d496c3f21a37dc1da7f" for 127.0.0.1 at 2022-02-17 07:08:48 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"162cbecee80fb637ab35", "state"=>"eb5c39c71bfe5624790b179e71b14d496c3f21a37dc1da7f", "provider"=>"github"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+StandardError (StandardError):
+  app/controllers/session_controller.rb:3:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.5ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.1ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 07:08:57 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (29.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 153ms (Views: 146.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-07d0dbb4f14da36c01f97149261cf0b7471c7e97f10ebfbe3bea09c0c0e00cdd.css?body=1" for 127.0.0.1 at 2022-02-17 07:08:58 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-17 07:08:58 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-17 07:08:58 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-17 07:08:58 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 07:09:00 -0300

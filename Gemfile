@@ -23,7 +23,10 @@ gem 'tzinfo'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # without this gem the app would crash before starting
-gem 'bigdecimal', '1.3.5' 
+gem 'bigdecimal', '1.3.5'
+
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
