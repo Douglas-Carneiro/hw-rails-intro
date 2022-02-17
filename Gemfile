@@ -25,6 +25,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # without this gem the app would crash before starting
 gem 'bigdecimal', '1.3.5'
 
+gem 'pg', '~> 0.21'
+
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
 
@@ -37,8 +39,6 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  gem 'pg', '~> 0.21'
 end
 
 group :production do

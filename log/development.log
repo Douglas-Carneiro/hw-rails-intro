@@ -3396,3 +3396,12 @@ Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac
 
 
 Started POST "/auth/github" for 127.0.0.1 at 2022-02-17 07:09:00 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-17 07:32:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (2.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'G'  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (191.3ms)
+  Rendered layouts/_flash.erb (1.6ms)
+Completed 200 OK in 1148ms (Views: 1104.7ms | ActiveRecord: 11.2ms)
