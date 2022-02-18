@@ -27,7 +27,8 @@ gem 'bigdecimal', '1.3.5'
 
 gem 'pg', '~> 0.21'
 
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+# Remember to restore this line to github:... if this doesn't work out
+gem 'omniauth-github', git: 'https://github.com/omniauth/omniauth-github.git', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
