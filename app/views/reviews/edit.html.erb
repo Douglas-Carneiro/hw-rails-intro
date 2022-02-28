@@ -1,0 +1,8 @@
+<h2>Edit Existing Review</h2>
+
+<%= form_tag movie_review_path(@movie, @review), :method => :put do %>
+  <label class="col-form-label"> How many potatoes:</label>
+  <%= select_tag 'review[potatoes]', options_for_select(1..5), class: 'form-control' %>
+  <%= submit_tag 'Update Review', :class => 'btn btn-success' %>
+  <%= link_to 'Cancel', movie_path(@movie), :class => 'btn btn-secondary' %>
+<% end %>

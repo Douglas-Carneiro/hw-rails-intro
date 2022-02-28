@@ -1,0 +1,27 @@
+<h2>All Reviews for <% @movie.title %></h2>
+
+<table class="table table-striped col-md-12" id="movies">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Potatoes</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td>
+          <%= review.moviegoer.name %>
+        </td>
+        <td>
+          <%= review.potatoes %>
+        </td>
+        <td>
+          <%= review.comments %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back to movie page', movie_path(@movie), :class => 'btn btn-primary' %>

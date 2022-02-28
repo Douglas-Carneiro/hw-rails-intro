@@ -17,8 +17,21 @@
   <%= @movie.description %>
 </p>
 
+<% if @review %>
+  <h3>Your Review:</h3>
+  <p id="review">
+    <%= @review.potatoes > 1 ? @review.potatoes.to_s + ' potatoes' : @review.potatoes.to_s + ' potato' %>
+  </p>
+<% end %>
 <div class="row">
   <%= link_to 'Edit', edit_movie_path(@movie), :class => 'btn btn-primary col-2' %>
   <%= link_to 'Delete', movie_path(@movie), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
   <%= link_to 'Back to movie list', movies_path, :class => 'btn btn-primary col-2' %>
+  <%= link_to 'All reviews', movie_reviews_path(@movie), :class => 'btn btn-primary col-2' %>
+  <% if @review %>
+    <%= link_to 'Edit review', edit_movie_review_path(@movie, @review), :class => 'btn btn-primary col-2' %>
+    <%= link_to 'Delete review', movie_review_path(@movie, @review), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
+  <% else %>
+    <%= link_to 'Review movie', new_movie_review_path(@movie), :class => 'btn btn-primary col-2' %>
+  <% end %>
 </div>
