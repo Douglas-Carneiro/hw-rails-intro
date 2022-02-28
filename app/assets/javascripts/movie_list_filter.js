@@ -1,4 +1,4 @@
-let MovieListFilter = {
+var MovieListFilter = {
   filter_adult: function () {
     // 'this' is *unwrapped* element that received event (checkbox)
     if ($(this).is(':checked')) {
@@ -9,7 +9,7 @@ let MovieListFilter = {
   },
   setup: function() {
     // construct checkbox with label
-    let labelAndCheckbox =
+    var labelAndCheckbox =
       $('<label for="filter">Only movies suitable for children</label>' +
         '<input type="checkbox" id="filter"/>' );
     labelAndCheckbox.insertBefore('#movies');
