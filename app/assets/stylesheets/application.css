@@ -17,3 +17,10 @@
 .hilite {
   background-color: yellow;
 }
+
+#movieInfo {
+  padding: 2ex;
+  position: absolute;
+  border: 2px double grey;
+  background: wheat;
+}

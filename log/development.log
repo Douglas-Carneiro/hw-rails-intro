@@ -7791,3 +7791,893 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.erb within layouts/application (60.5ms)
   Rendered layouts/_flash.erb (0.2ms)
 Completed 200 OK in 112ms (Views: 99.8ms | ActiveRecord: 1.6ms)
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 70]]
+  [1m[35mMovie Load (2.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" IS NULL LIMIT 1
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:00:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (2.0ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (39.7ms)
+  Rendered layouts/_flash.erb (12.0ms)
+Completed 200 OK in 2125ms (Views: 1949.4ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/assets/application.self-b88c0930116522d2d9c2674f5d8781c07387bb6a9ccb7e907d7cb37dfc798dc8.css?body=1" for 127.0.0.1 at 2022-02-28 09:00:30 -0300
+
+
+Started GET "/assets/movie_list_filter.self-99fbd5acb0d0e7fd8734e96d940466e583511b52722033f8bcc10cde520fa0bb.js?body=1" for 127.0.0.1 at 2022-02-28 09:00:30 -0300
+
+
+Started GET "/assets/movie_popup.self-f1f084de5c20b16be4cc4a9febd0f33b54af3b608197e1725a0ae03123840641.js?body=1" for 127.0.0.1 at 2022-02-28 09:00:30 -0300
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:00:34 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (1.7ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (4.6ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (1.8ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 11.1ms)
+
+ActionView::MissingTemplate (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :web_console_v2], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/douglas/Documentos/engineering-saas/hw-rails-intro/app/views"
+):
+  app/controllers/movies_controller.rb:7:in `show'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (1.0ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:01:20 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (9.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.6ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (25.1ms)
+Completed 200 OK in 57ms (Views: 30.1ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:02:15 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (2.8ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (1.9ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.7ms)
+Completed 200 OK in 59ms (Views: 18.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-02-28 09:02:16 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (4.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered movies/edit.html.erb within layouts/application (157.1ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 270ms (Views: 243.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:02:33 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (1.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (64.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 249ms (Views: 220.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2022-02-28 09:02:42 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.6ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 2], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (1.5ms)
+Completed 200 OK in 42ms (Views: 12.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2022-02-28 09:02:45 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35mMoviegoer Load (3.5ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (3.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mReview Load (1.5ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 4], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 13.6ms | ActiveRecord: 8.2ms)
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:04:35 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.8ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (2.2ms)
+Completed 200 OK in 26ms (Views: 12.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-02-28 09:04:36 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered movies/edit.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 127ms (Views: 113.8ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/movies/1" for 127.0.0.1 at 2022-02-28 09:04:42 -0300
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wFf23Z6SofIDtwAhctO1PT/ebjX/grejulkpoUQZgYfVKQ2VQgi7I+P2qdySV0L9tc69dexUPbk01UpzHA1Hdg==", "movie"=>{"title"=>"Aladdin", "description"=>"Aladdin is a 1992 American animated musical fantasy comedy film produced by Walt Disney Feature Animation and released by Walt Disney Pictures", "rating"=>"G", "release_date(1i)"=>"1992", "release_date(2i)"=>"11", "release_date(3i)"=>"25"}, "commit"=>"Update Movie Info", "id"=>"1"}
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (4.7ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mUPDATE "movies" SET "description" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["description", "Aladdin is a 1992 American animated musical fantasy comedy film produced by Walt Disney Feature Animation and released by Walt Disney Pictures"], ["updated_at", "2022-02-28 12:04:42.918172"], ["id", 1]]
+  [1m[35m (2.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 83ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:04:42 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.7ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (1.9ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 146ms (Views: 112.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:04:49 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (1.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (5.5ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 140ms (Views: 114.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:04:55 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[35mMoviegoer Load (1.1ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (2.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 76ms (Views: 66.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:05:06 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[35mMoviegoer Load (1.0ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 64.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:05:06 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[35mMoviegoer Load (0.9ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.4ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 105ms (Views: 89.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:05:10 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (29.5ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 149ms (Views: 132.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:05:19 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (0.8ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.6ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 9.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:05:27 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (5.0ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (21.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 96ms (Views: 83.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:05:37 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (38.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 148ms (Views: 128.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:05:39 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 64.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:05:44 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (38.4ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 101ms (Views: 88.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:06:55 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 98ms (Views: 83.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.self-46b461670f089fcf7a62d53064b2d6c3b4d8e832e9966a9e0653d9e0254552d4.css?body=1" for 127.0.0.1 at 2022-02-28 09:06:55 -0300
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:06:58 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (2.1ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 179ms (Views: 152.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:01 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (1.9ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 97ms (Views: 86.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:10 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (1.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 163ms (Views: 158.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:10 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (1.2ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 188ms (Views: 179.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:07:12 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (3.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.9ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (35.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 182ms (Views: 171.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:07:12 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (1.3ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 140ms (Views: 126.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:07:12 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 122ms (Views: 115.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:07:12 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (1.0ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (3.9ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (78.2ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 416ms (Views: 391.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:18 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.4ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 255ms (Views: 239.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:18 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (11.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (2.9ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (29.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 200ms (Views: 146.2ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:19 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (22.3ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (2.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (50.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 315ms (Views: 275.0ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:19 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (2.0ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (38.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 342ms (Views: 332.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:20 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_flash.erb (3.0ms)
+Completed 200 OK in 181ms (Views: 171.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:20 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (4.2ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (30.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 255ms (Views: 242.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:20 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (1.3ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (6.6ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (37.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 243ms (Views: 217.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:07:21 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (1.0ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 65.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:07:22 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:07:25 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.2ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 60.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:07:30 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (1.1ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 126.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:17:46 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (6.2ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (33.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 242ms (Views: 222.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2022-02-28 09:17:55 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (1.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (4.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 2], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 10.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2022-02-28 09:17:55 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[35mMoviegoer Load (2.7ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (3.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Load (1.6ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 2], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 12.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:19:44 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (6.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_flash.erb (9.8ms)
+Completed 200 OK in 121ms (Views: 108.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 09:19:44 -0300
+Processing by MoviesController#index as */*
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[36mMoviegoer Load (7.0ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.5ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 126ms (Views: 98.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:19:59 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (2.4ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (73.7ms)
+  Rendered layouts/_flash.erb (5.5ms)
+Completed 200 OK in 254ms (Views: 245.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:23:19 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (25.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 140ms (Views: 133.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:23:21 -0300
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"+TgIe/H1LC+ZEq8kJgxnLi3LQcIMc3U77aZF+hv6GcLsRvMzLW82/nlTBtnGiJDup9uSgh+l/yFjKiYoQ+7fMw==", "home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (6.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 400 Bad Request in 26ms (ActiveRecord: 6.7ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: movie):
+  app/controllers/movies_controller.rb:56:in `movie_params'
+  app/controllers/movies_controller.rb:29:in `create'
+
+
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (20.8ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/douglas/.ruby/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (9.5ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.6ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/douglas/.ruby/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (155.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:29:29 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (5.7ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (93.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 607ms (Views: 591.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/movie_popup.self-9f44db0a534ed759cd58a31dd9aa9de779aee86de17519af83283b3a784d20bf.js?body=1" for 127.0.0.1 at 2022-02-28 09:29:30 -0300
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:29:46 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (3.1ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (5.6ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (70.7ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 183ms (Views: 155.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 09:29:48 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[35mMoviegoer Load (10.0ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (3.8ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (72.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 299ms (Views: 252.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2022-02-28 09:29:53 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMoviegoer Load (4.1ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.4ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mReview Load (1.0ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 7], ["moviegoer_id", 1]]
+  Rendered movies/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 131ms (Views: 82.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:30:09 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 183ms (Views: 176.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2022-02-28 09:30:33 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.8ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 7], ["moviegoer_id", 1]]
+  Rendered movies/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 41.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:30:41 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (0.7ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (13.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 168ms (Views: 146.5ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 09:31:51 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 497ms (Views: 490.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/movie_popup.self-ff512e35ffad40b771a8adf632bf7bf3f524987b61d5c5d3ff24d68fe2eb1fd4.js?body=1" for 127.0.0.1 at 2022-02-28 09:31:52 -0300
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2022-02-28 09:31:53 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[35mMoviegoer Load (0.5ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 7], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.7ms)
+Completed 200 OK in 44ms (Views: 23.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:31:56 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (1.8ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.6ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 17.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 09:32:09 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (0.9ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.7ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.9ms)
+Completed 200 OK in 39ms (Views: 14.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2022-02-28 12:03:07 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mMoviegoer Load (14.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (6.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mReview Load (2.4ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 7], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 23.7ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 12:03:10 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (1.3ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.8ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (3.2ms)
+Completed 200 OK in 37ms (Views: 17.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2022-02-28 12:03:28 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (8.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (5.7ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 2], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.6ms)
+Completed 200 OK in 73ms (Views: 26.0ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 12:05:15 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (0.8ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.3ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY title[0m
+  Rendered movies/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_flash.erb (5.6ms)
+Completed 200 OK in 174ms (Views: 166.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-28 12:05:22 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (7.5ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :set_current_user rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-02-28 12:05:22 -0300
+Processing by SessionController#login as HTML
+  Rendered login/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 131ms (Views: 130.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b88c0930116522d2d9c2674f5d8781c07387bb6a9ccb7e907d7cb37dfc798dc8.css?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started GET "/assets/movie_list_filter.self-99fbd5acb0d0e7fd8734e96d940466e583511b52722033f8bcc10cde520fa0bb.js?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started GET "/assets/movie_popup.self-ff512e35ffad40b771a8adf632bf7bf3f524987b61d5c5d3ff24d68fe2eb1fd4.js?body=1" for 127.0.0.1 at 2022-02-28 12:05:23 -0300
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-28 12:05:29 -0300
+
+
+Started GET "/auth/github/callback?code=15a907d2d49ff550d873&state=6c906df4e0a0c2f396f081cb0a512aac07cf39883d4c59ce" for 127.0.0.1 at 2022-02-28 12:05:47 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"15a907d2d49ff550d873", "state"=>"6c906df4e0a0c2f396f081cb0a512aac07cf39883d4c59ce", "provider"=>"github"}
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=false token="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"> extra=#<OmniAuth::AuthHash all_emails=#<Hashie::Array []> raw_info=#<OmniAuth::AuthHash avatar_url="https://avatars.githubusercontent.com/u/29848596?v=4" bio="Full stack developer who loves E-commerce development." blog="" company=nil created_at="2017-07-03T02:03:07Z" email=nil events_url="https://api.github.com/users/Douglas-Carneiro/events{/privacy}" followers=2 followers_url="https://api.github.com/users/Douglas-Carneiro/followers" following=5 following_url="https://api.github.com/users/Douglas-Carneiro/following{/other_user}" gists_url="https://api.github.com/users/Douglas-Carneiro/gists{/gist_id}" gravatar_id="" hireable=true html_url="https://github.com/Douglas-Carneiro" id=29848596 location="Vera Cruz, Bahia, Brazil" login="Douglas-Carneiro" name="Douglas Carneiro" node_id="MDQ6VXNlcjI5ODQ4NTk2" organizations_url="https://api.github.com/users/Douglas-Carneiro/orgs" public_gists=0 public_repos=45 received_events_url="https://api.github.com/users/Douglas-Carneiro/received_events" repos_url="https://api.github.com/users/Douglas-Carneiro/repos" site_admin=false starred_url="https://api.github.com/users/Douglas-Carneiro/starred{/owner}{/repo}" subscriptions_url="https://api.github.com/users/Douglas-Carneiro/subscriptions" twitter_username=nil type="User" updated_at="2022-02-28T15:05:46Z" url="https://api.github.com/users/Douglas-Carneiro"> scope=""> info=#<OmniAuth::AuthHash::InfoHash email=nil image="https://avatars.githubusercontent.com/u/29848596?v=4" name="Douglas Carneiro" nickname="Douglas-Carneiro" urls=#<OmniAuth::AuthHash Blog="" GitHub="https://github.com/Douglas-Carneiro">> provider="github" uid="29848596">
+Auth[uid] = 29848596
+  [1m[36mMoviegoer Load (2.8ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = $1  ORDER BY "moviegoers"."id" ASC LIMIT 1[0m  [["uid", "29848596"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 24ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 12:05:48 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMoviegoer Load (5.5ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (73.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 268ms (Views: 244.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/movies?home=1&orderby=release_date" for 127.0.0.1 at 2022-02-28 12:26:12 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"release_date"}
+  [1m[35mMoviegoer Load (4.0ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.9ms)[0m  [1mSELECT "movies".* FROM "movies"  ORDER BY release_date[0m
+  Rendered movies/index.html.erb within layouts/application (48.6ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 257ms (Views: 237.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/movies/5" for 127.0.0.1 at 2022-02-28 12:26:23 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[35mMoviegoer Load (0.5ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 5], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (1.1ms)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2022-02-28 12:26:27 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mMoviegoer Load (1.7ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1[0m  [["movie_id", 7], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (1.3ms)
+Completed 200 OK in 28ms (Views: 11.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-02-28 12:26:33 -0300
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mMoviegoer Load (0.9ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = $1 AND "reviews"."moviegoer_id" = $2  ORDER BY "reviews"."id" ASC LIMIT 1  [["movie_id", 1], ["moviegoer_id", 1]]
+  Rendered movies/_movie.erb (0.7ms)
+Completed 200 OK in 29ms (Views: 7.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/session/destroy" for 127.0.0.1 at 2022-02-28 12:29:46 -0300
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 12:29:46 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (2.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as :set_current_user rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-02-28 12:29:46 -0300
+Processing by SessionController#login as HTML
+  Rendered login/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (1.6ms)
+Completed 200 OK in 127ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2022-02-28 12:29:52 -0300
+
+
+Started GET "/auth/github/callback?code=71885458c618c2d51538&state=c8bb9fd0ddaf46b6b4050045845cbaf9c1f8cbc95a2a7993" for 127.0.0.1 at 2022-02-28 12:29:53 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"71885458c618c2d51538", "state"=>"c8bb9fd0ddaf46b6b4050045845cbaf9c1f8cbc95a2a7993", "provider"=>"github"}
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=false token="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"> extra=#<OmniAuth::AuthHash all_emails=#<Hashie::Array []> raw_info=#<OmniAuth::AuthHash avatar_url="https://avatars.githubusercontent.com/u/29848596?v=4" bio="Full stack developer who loves E-commerce development." blog="" company=nil created_at="2017-07-03T02:03:07Z" email=nil events_url="https://api.github.com/users/Douglas-Carneiro/events{/privacy}" followers=2 followers_url="https://api.github.com/users/Douglas-Carneiro/followers" following=5 following_url="https://api.github.com/users/Douglas-Carneiro/following{/other_user}" gists_url="https://api.github.com/users/Douglas-Carneiro/gists{/gist_id}" gravatar_id="" hireable=true html_url="https://github.com/Douglas-Carneiro" id=29848596 location="Vera Cruz, Bahia, Brazil" login="Douglas-Carneiro" name="Douglas Carneiro" node_id="MDQ6VXNlcjI5ODQ4NTk2" organizations_url="https://api.github.com/users/Douglas-Carneiro/orgs" public_gists=0 public_repos=45 received_events_url="https://api.github.com/users/Douglas-Carneiro/received_events" repos_url="https://api.github.com/users/Douglas-Carneiro/repos" site_admin=false starred_url="https://api.github.com/users/Douglas-Carneiro/starred{/owner}{/repo}" subscriptions_url="https://api.github.com/users/Douglas-Carneiro/subscriptions" twitter_username=nil type="User" updated_at="2022-02-28T15:05:46Z" url="https://api.github.com/users/Douglas-Carneiro"> scope=""> info=#<OmniAuth::AuthHash::InfoHash email=nil image="https://avatars.githubusercontent.com/u/29848596?v=4" name="Douglas Carneiro" nickname="Douglas-Carneiro" urls=#<OmniAuth::AuthHash Blog="" GitHub="https://github.com/Douglas-Carneiro">> provider="github" uid="29848596">
+Auth[uid] = 29848596
+  [1m[35mMoviegoer Load (9.0ms)[0m  SELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = $1  ORDER BY "moviegoers"."id" ASC LIMIT 1  [["uid", "29848596"]]
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 39ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-02-28 12:29:54 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (1.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.3ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY release_date
+  Rendered movies/index.html.erb within layouts/application (30.6ms)
+  Rendered layouts/_flash.erb (3.8ms)
+Completed 200 OK in 183ms (Views: 175.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 12:30:19 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (2.6ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (31.2ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (59.1ms)
+  Rendered layouts/_flash.erb (5.3ms)
+Completed 200 OK in 305ms (Views: 254.5ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:09:21 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 105ms (Views: 95.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:09:30 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.9ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (7.8ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (64.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 178ms (Views: 150.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:10:01 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.9ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 68.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:10:24 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (2.5ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 211ms (Views: 166.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:10:26 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (0.8ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.7ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 176ms (Views: 145.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies?home=1&orderby=title" for 127.0.0.1 at 2022-02-28 13:10:37 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"home"=>"1", "orderby"=>"title"}
+  [1m[36mMoviegoer Load (1.2ms)[0m  [1mSELECT  "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies"  ORDER BY title
+  Rendered movies/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_flash.erb (19.4ms)
+Completed 200 OK in 144ms (Views: 129.3ms | ActiveRecord: 2.2ms)

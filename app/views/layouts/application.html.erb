@@ -14,7 +14,7 @@
         <div class="col-2 offset-8">
           <%# get method is not working %>
           <%# <a class="btn btn-primary text-center" href="/auth/github">Sign In</a> %>
-          <%= link_to "Sign In", '/auth/github', method: "post", class: 'btn btn-primary' %>
+          <%= link_to "Sign In", '/auth/github', method: "post", class: 'btn btn-primary' unless @current_user%>
         </div>
         <div class="col-2">
           <a class="btn btn-danger  text-center" href="/session/destroy">Sign Out</a>

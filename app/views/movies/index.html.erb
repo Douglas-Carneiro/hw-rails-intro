@@ -26,7 +26,7 @@
   <tbody>
     <% @movies.each do |movie| %>
       
-        <tr class="<%= (' adult' unless movie.rating =~ /^G|PG$/) %>">
+        <tr class="movie<%= (' adult' unless movie.rating =~ /^G|PG$/) %>">
           <td>
             <%= movie.title %>
           </td>

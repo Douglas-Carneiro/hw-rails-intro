@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
       id = params[:id] # retrieve movie ID from URI route
       @movie = Movie.find(id) # look up movie by unique ID
       @review = Review.where(:movie_id => id, :moviegoer_id => @current_user.id).first
+      render(:partial => 'movie', :object => @movie) if request.xhr?
       # will render app/views/movies/show.<extension> by default
     end
   
